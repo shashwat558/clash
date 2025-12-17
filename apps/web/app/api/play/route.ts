@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
             paymentData,
             network: monadTestnet,
             price: GAME_PRICE,
-            payTo: "0x343738ea4115B20ce4324d096D8Beaec77708868",
+            payTo: "",
             facilitator: thirdWebX402Facilitator
         });
 
