@@ -4,18 +4,20 @@ import { monadTestnet } from "thirdweb/chains";
 import { NextRequest, NextResponse } from "next/server";
 
 const client = createThirdwebClient({
-    secretKey: process.env.SECRET_KEY!
+    secretKey: "HVovZIqo_ZCzpv_6viBCkByIQx_frEDV4e3ktliqMpR42CKySLeLjtL6bHFCKFaBPDHrQpAopN3oQL6xoXCPiQ"
 });
 
 const thirdWebX402Facilitator = facilitator({
     client,
-    serverWalletAddress: process.env.SERVER_WALLET!
+    serverWalletAddress: "0x343738ea4115B20ce4324d096D8Beaec77708868"
 })
 
+console.log("jjk")
 
-const GAME_PRICE = "10";
+const GAME_PRICE = "$0.01";
 
-export async function POST(req: NextRequest) {
+export async function GET(req: NextRequest) {
+    console.log("hi")
     try {
         const paymentData = req.headers.get("x-payment");
 
@@ -25,7 +27,7 @@ export async function POST(req: NextRequest) {
             paymentData,
             network: monadTestnet,
             price: GAME_PRICE,
-            payTo: "",
+            payTo: "0x343738ea4115B20ce4324d096D8Beaec77708868",
             facilitator: thirdWebX402Facilitator
         });
 

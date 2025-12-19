@@ -1,3 +1,4 @@
+@import "tailwindcss";
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -47,4 +48,48 @@ a {
   .imgDark {
     display: unset;
   }
+}
+
+.sidebar {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.sidebar hr {
+  border-color: var(--border-clr);
+}
+
+.sidebar ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.sidebar ul li a {
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  transition: .25s;
+}
+
+.sidebar ul li a:hover {
+  color: var(--txt-clr);
+  background-color: var(--bg-2-clr);
+}
+
+.sidebar ul li a.active {
+  color: var(--txt-clr);
+  background-color: var(--bg-2-clr);
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#canvas {
+  width: 80%;
+  background-color: var(--bg-2-clr);
+  border-radius: 4px;
 }
