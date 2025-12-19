@@ -4,12 +4,12 @@ import { monadTestnet } from "thirdweb/chains";
 import { NextRequest, NextResponse } from "next/server";
 
 const client = createThirdwebClient({
-    secretKey: "HVovZIqo_ZCzpv_6viBCkByIQx_frEDV4e3ktliqMpR42CKySLeLjtL6bHFCKFaBPDHrQpAopN3oQL6xoXCPiQ"
+    secretKey: ""
 });
 
 const thirdWebX402Facilitator = facilitator({
     client,
-    serverWalletAddress: "0x343738ea4115B20ce4324d096D8Beaec77708868"
+    serverWalletAddress: ""
 })
 
 console.log("jjk")
@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
             paymentData,
             network: monadTestnet,
             price: GAME_PRICE,
-            payTo: "0x343738ea4115B20ce4324d096D8Beaec77708868",
+            payTo: "",
             facilitator: thirdWebX402Facilitator
         });
 

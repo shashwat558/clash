@@ -19,7 +19,7 @@ contract MonarcToken is ERC20, Ownable {
         _mint(to, amount);
     }
 
-    function burn(uint256 amount) external {
-        _burn(msg.sender, amount);
+    function burnFrom(address from ,uint256 amount) external {
+        _burn(from, amount);
     }
 }

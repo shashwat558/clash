@@ -1,5 +1,5 @@
-// SPDX-LICENSE-IDENTIFIER: UNLICENSED
-pragma solidity ^0.8.20;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.28;
 
 import "./MonarcToken.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
@@ -15,7 +15,7 @@ contract GameManager is Ownable {
         LOSS,
         PARTIAL,
         WIN
-    };
+    }
 
     event GameResultProcessed(
         address indexed player,
@@ -23,7 +23,7 @@ contract GameManager is Ownable {
         uint256 reward
     );
 
-    constructor(address _mnc) {
+    constructor(address _mnc) Ownable(msg.sender) {
         mnc = MonarcToken(_mnc);
     }
     
@@ -50,10 +50,11 @@ contract GameManager is Ownable {
         );
 
         // Optional sink
-        function burnFrom(address player, uint256 amount) external onlyOwner {
-            _burn(player, amount);
+        
 
-        }
+    }
 
+    function burnFrom(address player, uint256 amount) external onlyOwner {
+        mnc.burnFrom(player, amount);
     }
 }

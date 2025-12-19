@@ -1,5 +1,5 @@
 import React from 'react'
-import BreakOut from '../../../components/breakout-game/Game'
+import BreakOut from '../../../components/games/breakout-game/Game'
 
 
 const page = () => {
